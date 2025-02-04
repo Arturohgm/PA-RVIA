@@ -19,7 +19,7 @@ export class IdGeneratorComponent {
   generateSyncID(): void {
     const startTime = performance.now();
     this.syncLogs = [];
-    for (let i = 0; i < 2000; i++) {
+    for (let i = 0; i < 1000000; i++) {
       const newId = `sync-${Date.now()}-${i}`;
       this.syncLogs.push(newId);
     }
@@ -33,7 +33,7 @@ export class IdGeneratorComponent {
   generateAsyncID(): void {
     const startTime = performance.now();
     this.asyncLogs = [];
-    for (let i = 0; i < 2000; i++) {
+    for (let i = 0; i < 1000000; i++) {
       const newId = `async-${Date.now()}-${i}`;
       this.asyncLogs.push(newId);
     }
