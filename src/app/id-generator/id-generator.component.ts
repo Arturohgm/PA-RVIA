@@ -1,31 +1,33 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-id-generator',
   templateUrl: './id-generator.component.html',
-  styleUrls: ['./id-generator.component.css'],
-  standalone: true,
-  imports: [CommonModule]
+  styleUrls: ['./id-generator.component.css']
 })
 export class IdGeneratorComponent {
   id: string | null = null;
   syncProgress: number = 0;
   asyncProgress: number = 0;
-  logs: string[] = [];
+  syncLogs: string[] = [];
+  asyncLogs: string[] = [];
 
   constructor() {}
 
   generateSyncID(): void {
-    this.id = `sync-${Date.now()}`;
-    this.logs.push(this.id);
+    for (let i = 0; i < 10000; i++) {
+      const newId = `sync-${Date.now()}-${i}`;
+      this.syncLogs.push(newId);
+    }
     this.syncProgress = 0;
     this.updateProgress('sync');
   }
 
   generateAsyncID(): void {
-    this.id = `async-${Date.now()}`;
-    this.logs.push(this.id);
+    for (let i = 0; i < 10000; i++) {
+      const newId = `async-${Date.now()}-${i}`;
+      this.asyncLogs.push(newId);
+    }
     this.asyncProgress = 0;
     this.updateProgress('async');
   }
@@ -46,8 +48,8 @@ export class IdGeneratorComponent {
     }, 1000);
   }
 
-  consultarProceso(pid: string): void {
-    alert("Consultando proceso para: " + pid);
-    // Aquí puedes agregar la lógica para consultar el proceso real
+  consultarProceso(type: 'sync' | 'async'): void {
+    const logs = type === 'sync' ? this.syncLogs : this.asyncLogs;
+    alert(`Consultando proceso para: ${logs.join(', ')}`);
   }
 }

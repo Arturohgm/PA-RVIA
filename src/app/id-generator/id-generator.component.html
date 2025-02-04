@@ -4,9 +4,6 @@
     <button (click)="generateSyncID()">Generar PID Sincrónico</button>
     <button (click)="generateAsyncID()">Generar PID Asincrónico</button>
   </div>
-  <div class="result-container" *ngIf="id">
-    <p>PID Generado: <strong>{{ id }}</strong></p>
-  </div>
   <h2>Consulta de Proceso PID</h2>
   <table>
     <thead>
@@ -19,7 +16,7 @@
     <tbody>
       <tr>
         <td>PID Síncrono</td>
-        <td><button (click)="consultarProceso('PID_1234')">Consultar</button></td>
+        <td><button (click)="consultarProceso('sync')">Consultar</button></td>
         <td>
           <div>
             <p>Progreso Síncrono: {{ syncProgress.toFixed(2) }}%</p>
@@ -29,7 +26,7 @@
       </tr>
       <tr>
         <td>PID Asíncrono</td>
-        <td><button (click)="consultarProceso('PID_5678')">Consultar</button></td>
+        <td><button (click)="consultarProceso('async')">Consultar</button></td>
         <td>
           <div>
             <p>Progreso Asíncrono: {{ asyncProgress.toFixed(2) }}%</p>
@@ -40,9 +37,4 @@
       <!-- Puedes agregar más filas aquí -->
     </tbody>
   </table>
-
-  <h2>Log de PIDs Generados</h2>
-  <ul>
-    <li *ngFor="let log of logs">{{ log }}</li>
-  </ul>
-</div>
+  
