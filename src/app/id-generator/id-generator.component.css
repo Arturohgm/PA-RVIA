@@ -31,7 +31,7 @@
 
 
    .container {
-    max-width: 400px; /* Reducimos el ancho para un efecto más compacto */
+    max-width: 600px; /* Reducimos el ancho para un efecto más compacto */
     margin: 0 auto;   /* Centra el contenedor */
     padding: 20px;    /* Espaciado interno */
     text-align: center; /* Centra el texto */
@@ -48,17 +48,17 @@
 button {
     margin: 5px; /* Espaciado más sutil entre botones */
     padding: 10px 15px; /* Espaciado interno más pequeño */
-    font-size: 14px; /* Tamaño de fuente más pequeño */
+    font-size: 24px; /* Tamaño de fuente más pequeño */
     cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
     border: none; /* Sin bordes */
     border-radius: 5px; /* Bordes redondeados en botones */
-    background-color: #007bff; /* Color de fondo azul */
+    background-color: #007bff; /* Color de fondo azul */ 
     color: white; /* Color del texto blanco */
     transition: background-color 0.3s; /* Transición suave para el color */
 }
 
 button:hover {
-    background-color: #0056b3; /* Color de fondo más oscuro al pasar el mouse */
+    background-color: #00c3ff; /* Color de fondo más oscuro al pasar el mouse */
 }
 
 .result-container {
@@ -69,7 +69,7 @@ button:hover {
 
 .progress-bar {
     height: 20px; /* Altura de la barra de progreso */
-    background-color: #4caf50; /* Color de la barra de progreso */
+    background-color: #000000; /* Color de la barra de progreso */
     width: 0; /* Ancho inicial */
     transition: width 0.5s; /* Transición suave para el ancho */
     border-radius: 5px; /* Bordes redondeados en la barra de progreso */
@@ -81,3 +81,62 @@ button:hover {
     overflow: hidden; /* Oculta el desbordamiento */
     margin-top: 10px; /* Espaciado superior */
 }
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+.progress {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+}
+.progress-bar {
+    height: 20px;
+    width: 0;
+    background-color: #4caf50;
+    border-radius: 5px;
+}
+
+
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Ancho del modal */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+

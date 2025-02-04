@@ -7,4 +7,50 @@
   <div class="result-container" *ngIf="id">
     <p>PID Generado: <strong>{{ id }}</strong></p>
   </div>
+  <h2>Consulta de Proceso PID</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre del PID</th>
+                <th>Consultar Proceso</th>
+                <th>Progreso</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>PID Síncrono</td>
+                <td><button onclick="consultarProceso('PID_1234')">Consultar</button></td>
+                <td>
+                    <div>
+                        <p>Progreso Síncrono: {{ syncProgress.toFixed(2) }}%</p>
+                        <progress [value]="syncProgress" max="100"></progress>
+                      </div>
+                </td>
+            </tr>
+            <tr>
+                <td>PID Asíncrono</td>
+                <td><button onclick="consultarProceso('PID_5678')">Consultar</button></td>
+                <td>
+                    <div>
+                        <p>Progreso Asíncrono: {{ asyncProgress.toFixed(2) }}%</p>
+                        <progress [value]="asyncProgress" max="100"></progress>
+                     </div>
+                    
+                </td>
+            </tr>
+            <!-- Puedes agregar más filas aquí -->
+        </tbody>
+    </table>
+        
+    <script>
+      function consultarProceso(pid) {
+          alert("Consultando proceso para: " + pid);
+          
+          // Aquí puedes agregar la lógica para consultar el proceso real
+      }
+  </script>
 </div>
+
+
+  
+  
