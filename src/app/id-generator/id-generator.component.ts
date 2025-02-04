@@ -12,17 +12,20 @@ export class IdGeneratorComponent {
   id: string | null = null;
   syncProgress: number = 0;
   asyncProgress: number = 0;
+  logs: string[] = [];
 
   constructor() {}
 
   generateSyncID(): void {
     this.id = `sync-${Date.now()}`;
+    this.logs.push(this.id);
     this.syncProgress = 0;
     this.updateProgress('sync');
   }
 
   generateAsyncID(): void {
     this.id = `async-${Date.now()}`;
+    this.logs.push(this.id);
     this.asyncProgress = 0;
     this.updateProgress('async');
   }
