@@ -2,7 +2,11 @@
   <h1>Generador de PIDs</h1>
   <div class="button-container">
     <button (click)="generateSyncID()">Generar PID Sincrónico</button>
+        <p>Tiempo de ejecución: {{ syncExecutionTime }} ms</p>
+
     <button (click)="generateAsyncID()">Generar PID Asincrónico</button>
+    <p>Tiempo de ejecución: {{ asyncExecutionTime }} ms</p>
+
   </div>
   <h2>Consulta de Proceso PID</h2>
   <table>
@@ -34,7 +38,10 @@
           </div>
         </td>
       </tr>
-      <!-- Puedes agregar más filas aquí -->
+
     </tbody>
   </table>
   
+  <div class="container">
+        <button (click)="generateBothIDs()">Generar Ambos PIDs</button>
+</div>
