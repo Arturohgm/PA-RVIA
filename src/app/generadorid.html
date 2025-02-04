@@ -1,0 +1,9 @@
+function generateUniqueId() {
+    const timestamp = Date.now(); // Obtener la fecha y hora actual en milisegundos
+    const randomNum = Math.floor(Math.random() * 1000); // Generar un número aleatorio entre 0 y 999
+    return `id-${timestamp}-${randomNum}`; // Combinar ambos para crear un ID único
+}
+
+// Ejemplo de uso
+const newId = generateUniqueId();
+console.log(newId);

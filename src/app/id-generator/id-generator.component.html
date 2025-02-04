@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Generador de PIDs</h1>
+  <div class="button-container">
+    <button (click)="generateSyncID()">Generar PID Sincrónico</button>
+    <button (click)="generateAsyncID()">Generar PID Asincrónico</button>
+  </div>
+  <div class="result-container" *ngIf="id">
+    <p>PID Generado: <strong>{{ id }}</strong></p>
+  </div>
+</div>
